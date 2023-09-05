@@ -1,0 +1,16 @@
+fastapi
+psycopg2-binary
+grpcio-tools
+grpcio
+SQLAlchemy
+pydantic
+pydantic[email]
+uvicorn[standard]
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+pytest
+python-dotenv
+alembic
+email-validator
+python-decouple
