@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x61uthservice.proto\x12\x0c\x61uthcservice\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\rHelloResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2W\n\tMyService\x12J\n\x0fGetHelloMessage\x12\x1a.authcservice.HelloRequest\x1a\x1b.authcservice.HelloResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x61uthservice.proto\x12\x0c\x61uthcservice\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\rHelloResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1d\n\x0cTokenRequest\x12\r\n\x05token\x18\x02 \x01(\t\" \n\rTokenResponse\x12\x0f\n\x07message\x18\x02 \x01(\t2W\n\tMyService\x12J\n\x0fGetHelloMessage\x12\x1a.authcservice.HelloRequest\x1a\x1b.authcservice.HelloResponse2U\n\nCheckToken\x12G\n\x0cGetTokenData\x12\x1a.authcservice.TokenRequest\x1a\x1b.authcservice.TokenResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -25,6 +25,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_HELLOREQUEST']._serialized_end=63
   _globals['_HELLORESPONSE']._serialized_start=65
   _globals['_HELLORESPONSE']._serialized_end=97
-  _globals['_MYSERVICE']._serialized_start=99
-  _globals['_MYSERVICE']._serialized_end=186
+  _globals['_TOKENREQUEST']._serialized_start=99
+  _globals['_TOKENREQUEST']._serialized_end=128
+  _globals['_TOKENRESPONSE']._serialized_start=130
+  _globals['_TOKENRESPONSE']._serialized_end=162
+  _globals['_MYSERVICE']._serialized_start=164
+  _globals['_MYSERVICE']._serialized_end=251
+  _globals['_CHECKTOKEN']._serialized_start=253
+  _globals['_CHECKTOKEN']._serialized_end=338
 # @@protoc_insertion_point(module_scope)

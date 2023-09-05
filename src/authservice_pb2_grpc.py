@@ -64,3 +64,70 @@ class MyService(object):
             authservice__pb2.HelloResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class CheckTokenStub(object):
+    """******************************************
+
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.GetTokenData = channel.unary_unary(
+                '/authcservice.CheckToken/GetTokenData',
+                request_serializer=authservice__pb2.TokenRequest.SerializeToString,
+                response_deserializer=authservice__pb2.TokenResponse.FromString,
+                )
+
+
+class CheckTokenServicer(object):
+    """******************************************
+
+    """
+
+    def GetTokenData(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_CheckTokenServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'GetTokenData': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTokenData,
+                    request_deserializer=authservice__pb2.TokenRequest.FromString,
+                    response_serializer=authservice__pb2.TokenResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'authcservice.CheckToken', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class CheckToken(object):
+    """******************************************
+
+    """
+
+    @staticmethod
+    def GetTokenData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/authcservice.CheckToken/GetTokenData',
+            authservice__pb2.TokenRequest.SerializeToString,
+            authservice__pb2.TokenResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

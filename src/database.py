@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from config import settings
-from pymongo import MongoClient
+
 
 #+++++++++++++++++++++++++++++++++++ Postgresql +++++++++++++++++++++++++++++++++++++++++++++
 
@@ -27,14 +27,6 @@ def get_db():
         db.close()
 
 
-#+++++++++++++++++++++++++++++++++++++++++++ MongoDB +++++++++++++++++++++++++++++++++++++++++++
-
-
-# Create MongoDB client
-client = MongoClient(host=settings.MONGO_HOST, port=settings.MONGO_PORT)
-
-# Access the database
-mongodb = client[settings.MONGO_DB]
 
 
 
